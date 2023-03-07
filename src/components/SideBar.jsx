@@ -74,7 +74,7 @@ export default function SideBar(props) {
           )}
         </span>
         <span className="sidebar-icons">
-          <a href="https://github.com/Robbe7730/Website">
+          <a href="https://github.com/Dexagod/site">
             <i className="fab fa-github fa-xl"/>
           </a>
         </span>
