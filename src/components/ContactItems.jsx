@@ -8,7 +8,7 @@ const CONTACTITEMS = [
   [FOAF('mbox'), SCHEMA('email')],
   [FOAF('homepage'), SCHEMA('url')],
   [FOAF('holdsAccount')],
-  [SCHEMA('callSign')],
+  [SCHEMA('callSign')]
 ];
 
 const ICONS_BY_URI = {
@@ -31,6 +31,8 @@ const ICONS_BY_URI = {
   "https://wikipedia.org": "fab fa-wikipedia-w",
   "https://wordpress.com": "fab fa-wordpress",
   "https://yelp.com": "fab fa-yelp",
+  "https://orcid.org": "fab fa-orcid",
+  "https://scholar.google.com": "fab fa-google",
 }
 
 export default function ContactItems(props) {

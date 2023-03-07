@@ -10,7 +10,7 @@ import * as rdflib from 'rdflib';
 
 export default function SideBar(props) {
   const [ sideBarOpen, setSideBarOpen ] = useState(false);
-  const [ solidUri, setSolidUri ] = useState("https://solid.robbevanherck.be");
+  const [ solidUri, setSolidUri ] = useState("https://pod.rubendedecker.be/");
   const [ loggedInName, setLoggedInName ] = useState(null);
 
   const { loggedInWebId } = props;

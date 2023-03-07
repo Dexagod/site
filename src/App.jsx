@@ -11,16 +11,16 @@ import SideBar from './components/SideBar.jsx';
 
 // TODO: make this a config
 const SOURCES = [
-  'https://solid.robbevanherck.be/robbevanherck/profile/card-private',
-  'https://solid.robbevanherck.be/robbevanherck/profile/card',
+  'https://pod.rubendedecker.be/profile/card',
+  'https://pod.rubendedecker.be/profile/card-private',
 ];
-const TARGET = rdflib.sym('https://robbevanherck.be#me');
+const TARGET = rdflib.sym('https://pod.rubendedecker.be/profile/card#me');
 
 function doLogin(solidUri) {
   login({
     oidcIssuer: solidUri,
     redirectUrl: window.location.href,
-    clientName: "My CV"
+    clientName: "Ruben D. personal profile"
   });
 }
 

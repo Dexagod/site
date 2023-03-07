@@ -46,7 +46,9 @@ export default function AboutMe(props) {
           property={name ? FOAF("name").value + " " + SCHEMA("name").value : undefined}
           className={name ? undefined : 'loading'}
         >
-          {name || "Loading..."}
+          <a href={user.value}>
+            {name || "Loading..."}
+          </a>
         </h1>
         <ContactItems {...props} />
       </div>

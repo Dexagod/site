@@ -28,7 +28,7 @@ h1 {
 }
 
 a {
-    color: inherit;
+    color: rgb(33, 140, 202);
     text-decoration-line: inherit;
     &:hover {
         color: auto;
@@ -92,11 +92,19 @@ a {
     font-style: italic;
 }
 
+.entry:hover {
+    background-color: #f8f8f8;
+
+}
+
 // ----- ABOUT ME -----
 
 #profile-picture {
-    width: $about-height;
     float: left;
+    width: 150px;
+    height: 150px;
+    object-fit: cover;
+    border-radius: 50%;
 }
 
 #about-me {
@@ -203,6 +211,14 @@ a {
                 margin: auto 0;
             }
         }
+    }
+}
+// ----- WORK-PROJECTS -----
+
+#work-projects {
+    .organization-logo{
+        max-height: 100px;
+        max-width: 200px;
     }
 }
 

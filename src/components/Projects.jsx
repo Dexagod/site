@@ -19,7 +19,7 @@ export default function Projects(props) {
 
   return (
     <section id="projects" className="full-block">
-      <h2>Project Highlights</h2>
+      <h2>Github Highlights</h2>
       <div id="project-list">
         {projects.length === 0 && (
           <div className="project">
