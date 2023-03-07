@@ -145,6 +145,40 @@ a {
     }
 }
 
+@media (max-width: 800px) {
+    #profile-picture {
+        width: 150px;
+        height: 150px;
+        margin-left: 25%;
+        object-fit: cover;
+        border-radius: 50%;
+        display: inline-block;
+    }
+
+    #name-contact {
+        margin-top: 1em;
+        display: inline-block;
+        padding-left: 0;
+    }
+
+    h1 {
+        margin-left: 0;
+    }
+
+    .contact-items {
+        display: flex;
+        flex-wrap: wrap;
+        justify-content: left;
+        font-size: 12pt;
+
+        > * {
+            margin: 5px;
+            flex: 1 0 80%; /* explanation below */
+        }
+    }
+}
+
+
 // ----- EDUCATION -----
 
 #education-timeline {
