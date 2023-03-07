@@ -34,7 +34,7 @@ export default function WorkProjects(props) {
             </a>
           </h3>
           <p>
-            Commisioned by:&nbsp
+            Commisioned by:{" "}
             <a href={project.funder.url}>
               {project.funder.name}
             </a>

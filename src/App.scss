@@ -11,6 +11,7 @@ body {
     font: 11pt/1.4 "Helvetica Neue", Helvetica, Arial, sans-serif;
 }
 
+
 #profile {
     @media print {
         padding: 1.5cm !important;
@@ -52,6 +53,20 @@ a {
         border: 1px solid black;
     }
     width: 100%;
+}
+
+
+
+@media (max-width: 800px) {
+    .half-block {
+        margin: 2em;
+        width: 100%;
+    }
+
+    .full-block {
+        margin: 2em;
+        width: 100%;
+    }
 }
 
 @media print {
@@ -109,7 +124,8 @@ a {
 
 #about-me {
     padding: 1em;
-    height: $about-height;
+    min-height: $about-height;
+    height: fit-content;
     border-bottom: dotted lightblue;
 }
 
@@ -179,7 +195,7 @@ a {
 #projects {
     #project-list {
         display: flex;
-        justify-content: space-between;
+        justify-content: center;
         flex-wrap: wrap;
         .project {
             border: 1px solid lightgray;
@@ -192,8 +208,14 @@ a {
                 width: 44%;
                 margin-top: 0.5em;
             }
+
             @media screen {
                 width: 46%;
+                margin-top: 0.2em;
+            }
+
+            @media screen and (max-width: 800px) {
+                width: 90%;
                 margin-top: 0.2em;
             }
 

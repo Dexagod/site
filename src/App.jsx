@@ -4,7 +4,7 @@ import React, { useState } from 'react';
 
 import * as rdflib from 'rdflib';
 
-import { login, handleIncomingRedirect, fetch as authFetch, logout, getDefaultSession } from "@inrupt/solid-client-authn-browser";
+import { login, handleIncomingRedirect, logout, getDefaultSession } from "@inrupt/solid-client-authn-browser";
 
 import Profile from './components/Profile.jsx';
 import SideBar from './components/SideBar.jsx';
@@ -47,7 +47,7 @@ function App() {
     if (graph.length === 0) {
       const newGraph = rdflib.graph();
       const fetcher = new rdflib.Fetcher(newGraph, {
-        fetch: authFetch
+        fetch: getDefaultSession().fetch
       });
 
       Promise.all(SOURCES.map((source) => {
