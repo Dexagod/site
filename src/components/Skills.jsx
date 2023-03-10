@@ -47,12 +47,14 @@ export default function Skills(props) {
         )}
         {Object.keys(skillsByLevel.humanLanguages).map((level, i) => (
           <li
-            marker={skillsByLevel.humanLanguages[level][0]}
-            rel={CV("hasSkill").value}
-            typeof={CV("LanguageSkill").value}
-            key={i}
+            marker={level} className="listify" key={i}
           >
-            {level}
+            {skillsByLevel.humanLanguages[level].map((skill, i) => (
+              <span rel={CV("hasSkill").value} typeof={CV("LanguageSkill").value} key={i}>
+                <span property={CV("skillName").value}>{skill}</span>
+                <span property={CV("skillLevel").value} hidden>{level}</span>
+              </span>
+            ))}
           </li>
         ))}
       </ul>
