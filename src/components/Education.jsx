@@ -1,4 +1,5 @@
 import { CV, CVB, FOAF, SCHEMA } from '../namespaces.js';
+import { checkLoading } from './Profile.jsx';
 
 function displayDegreeType(predicate) {
   switch (predicate) {
@@ -76,7 +77,8 @@ export default function Education(props) {
 
         {educations.length === 0 && (
           <li>
-            <span className="education-school loading">Loading...</span>
+            { checkLoading("", props.loadingDone) }
+            {/* <span className="education-school loading">Loading...</span> */}
           </li>
         )}
 

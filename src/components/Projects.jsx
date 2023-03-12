@@ -1,4 +1,5 @@
 import { FOAF, SCHEMA } from "../namespaces.js";
+import { checkLoading } from "./Profile.jsx";
 
 export default function Projects(props) {
   const { graph, user } = props;
@@ -25,10 +26,12 @@ export default function Projects(props) {
           <div className="project">
             <h3>
               <i className="icon fa-brands fa-github"></i>
-              <span className="loading">Loading...</span>
+              { checkLoading("", props.loadingDone) } 
+              {/* <span className="loading">Loading...</span> */}
             </h3>
             <div className="project-description">
-              <span className="loading">Loading...</span>
+              { checkLoading("", props.loadingDone) } 
+              {/* <span className="loading">Loading...</span> */}
             </div>
           </div>
         )}

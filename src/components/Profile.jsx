@@ -9,6 +9,14 @@ import Experience from './Experience.jsx';
 import Achievements from './Achievements.jsx';
 import WorkProjects from "./WorkProjects.jsx";
 
+export function checkLoading(className, loadingDone) { 
+  if (!loadingDone) {
+    return <span className={className + "loading"}>Loading...</span>
+  } else { 
+    return <span className={className + "loading"}>Not authorized</span>
+  }
+}
+
 export default function Profile(props) {
   return (
     <div id="profile">

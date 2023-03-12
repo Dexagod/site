@@ -1,4 +1,5 @@
 import { SCHEMA, FOAF, RDF } from '../namespaces.js'
+import { checkLoading } from './Profile.jsx'
 
 export default function WorkProjects(props) {
   const { graph, user } = props;
@@ -20,7 +21,7 @@ export default function WorkProjects(props) {
   return (
     <section id="work-projects" className="half-block">
       <h2>Research Projects</h2>
-      {projects.length === 0 && <span className="loading">Loading...</span>}
+      {projects.length === 0 && checkLoading("", props.loadingDone)} 
       {projects.map((project, i) => (
         <div
           className='entry'

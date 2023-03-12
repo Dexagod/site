@@ -60,7 +60,6 @@ export default function ContactItems(props) {
       let isAccount = false;
       let isURL = true;
       let accountHomepage;
-      console.log('test', value)
 
       if (value.startsWith('tel:')) {
         icon = "fas fa-phone";

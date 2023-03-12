@@ -1,4 +1,5 @@
 import { CV, SCHEMA, FOAF } from "../namespaces.js";
+import { checkLoading } from "./Profile.jsx";
 
 export default function VolunteerWork(props) {
   const { graph, user } = props;
@@ -22,7 +23,7 @@ export default function VolunteerWork(props) {
   return (
     <section id="volunteer-work" className="half-block">
       <h2>Volunteer Work</h2>
-      {entries.length === 0 && <span className="loading">Loading...</span>}
+      {entries.length === 0 && checkLoading("", props.loadingDone)}
       {entries.map((entry, i) => (
         <div rel={CV("hasWorkHistory").value} typeof={CV("WorkHistory").value} key={i}>
           <h3>

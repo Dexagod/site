@@ -1,4 +1,5 @@
 import { SCHEMA, FOAF } from '../namespaces.js'
+import { checkLoading } from './Profile.jsx';
 
 export default function Achievements(props) {
   const { graph, user } = props;
@@ -13,7 +14,9 @@ export default function Achievements(props) {
   return (
     <section id="achievements" className="half-block">
       <h2>Achievements</h2>
-      {achievements.length === 0 && <span className="loading">Loading...</span>}
+      {
+        achievements.length === 0 && checkLoading("", props.loadingDone)
+      }
       {achievements.map((achievement, i) => (
         <div
           rel={SCHEMA("hasCredential").value}

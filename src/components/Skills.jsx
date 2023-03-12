@@ -1,7 +1,8 @@
 import { CV, RDF } from '../namespaces.js';
+import { checkLoading } from './Profile.jsx';
 
 export default function Skills(props) {
-  const { user, graph } = props;
+  const { user, graph, loadingDone } = props;
 
   const skillUris = graph.each(user, CV('hasSkill'));
   const skillsByLevel = skillUris.reduce((acc, skillUri) => {
@@ -27,7 +28,8 @@ export default function Skills(props) {
       <h3>Programming Languages</h3>
       <ul>
         {Object.keys(skillsByLevel.programmingLanguages).length == 0 && (
-          <li className="loading">Loading...</li>
+          checkLoading("", props.loadingDone)
+          // <li className="loading">Loading...</li>
         )}
         {Object.keys(skillsByLevel.programmingLanguages).map((level, j) => (
           <li marker={level} className="listify" key={j}>
@@ -43,7 +45,8 @@ export default function Skills(props) {
       <h3>Languages</h3>
       <ul>
         {Object.keys(skillsByLevel.humanLanguages).length == 0 && (
-          <li className="loading">Loading...</li>
+          checkLoading("", props.loadingDone)
+          // <li className="loading">Loading...</li>
         )}
         {Object.keys(skillsByLevel.humanLanguages).map((level, i) => (
           <li

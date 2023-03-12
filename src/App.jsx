@@ -13,6 +13,7 @@ import SideBar from './components/SideBar.jsx';
 const SOURCES = [
   'https://pod.rubendedecker.be/profile/card',
   'https://pod.rubendedecker.be/profile/card-private',
+  'https://pod.rubendedecker.be/profile/card-public',
   'https://pod.rubendedecker.be/profile/cv-data',
 ];
 const TARGET = rdflib.sym('https://pod.rubendedecker.be/profile/card#me');
@@ -28,12 +29,14 @@ function doLogin(solidUri) {
 function doLogout(setGraph, setLoggedInWebId) {
   logout().then(() => {
     setGraph(rdflib.graph());
+    setLoadingDone(true);
     setLoggedInWebId(null);
   });
 }
 
 function App() {
   const [graph, setGraph] = useState(rdflib.graph());
+  const [loadingDone, setLoadingDone] = useState(false);
   const [loggedinWebId, setLoggedinWebId] = useState(null);
 
   handleIncomingRedirect().then(() => {
@@ -57,6 +60,7 @@ function App() {
         });
       })).then(() => {
         setGraph(newGraph);
+        setLoadingDone(true);
       });
     }
   })
@@ -80,6 +84,7 @@ function App() {
     <Profile
       graph={graph}
       user={TARGET}
+      loadingDone={loadingDone}
       key={2}
     />
   ]
