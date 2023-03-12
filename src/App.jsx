@@ -39,7 +39,7 @@ function App() {
   const [loadingDone, setLoadingDone] = useState(false);
   const [loggedinWebId, setLoggedinWebId] = useState(null);
 
-  handleIncomingRedirect().then(() => {
+  handleIncomingRedirect( {restorePreviousSession: true} ).then(() => {
     if (loggedinWebId && !getDefaultSession().info.isLoggedIn) {
       setLoggedinWebId(null);
     }
