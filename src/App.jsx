@@ -13,6 +13,7 @@ import SideBar from './components/SideBar.jsx';
 const SOURCES = [
   'https://pod.rubendedecker.be/profile/card',
   'https://pod.rubendedecker.be/profile/card-private',
+  'https://pod.rubendedecker.be/profile/cv-data',
 ];
 const TARGET = rdflib.sym('https://pod.rubendedecker.be/profile/card#me');
 
